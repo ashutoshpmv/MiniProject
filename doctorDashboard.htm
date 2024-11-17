@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="ddashboard.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1>Doctor Dashboard</h1>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard Section -->
+    <main>
+        <div class="dashboard-container">
+            <!-- Tile: Request Access -->
+            <div class="tile request-access" onclick="location.href='request_access.html'">
+                <div class="tile-content">
+                    <h2>Request Access</h2>
+                    <p>Request permission to view patient records.</p>
+                </div>
+            </div>
+
+            <!-- Tile: My Patients -->
+            <div class="tile my-patients" onclick="location.href='my_patients.html'">
+                <div class="tile-content">
+                    <h2>My Patients</h2>
+                    <p>View and manage your patient list.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Medical Records System. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function logout() {
+            alert("You have been logged out.");
+            location.href = 'index.html'; // Redirect to the homepage or login page
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records</title>
+    <link rel="stylesheet" href="medicalRecords.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Medical Records</h1>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h2>List of Records</h2>
+            <table id="recordsTable">
+                <thead>
+                    <tr>
+                        <th>Record ID</th>
+                        <th>Record Name</th>
+                        <th>Record Type</th> <!-- New column for Record Type -->
+                        <th>Department</th>
+                        <th>Uploaded By</th>
+                        <th>Description</th>
+                        <th>Date of Upload</th>
+                        <th>Shared With</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>REC12345</td>
+                        <td>Blood Test Report</td>
+                        <td>Blood Test</td> <!-- Record Type -->
+                        <td>Hematology</td>
+                        <td>Doctor</td>
+                        <td>Test to analyze blood composition.</td>
+                        <td>2024-11-10</td>
+                        <td>Doctor A, Doctor B</td>
+                        <td>
+                            <button onclick="viewRecord()">View</button>
+                            <button onclick="downloadRecord()">Download</button>
+                            <button onclick="sharePermissions()">Share</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>REC12346</td>
+                        <td>X-Ray Image</td>
+                        <td>X-Ray</td> <!-- Record Type -->
+                        <td>Radiology</td>
+                        <td>Patient</td>
+                        <td>Chest X-ray for examination.</td>
+                        <td>2024-11-12</td>
+                        <td>Doctor C</td>
+                        <td>
+                            <button onclick="viewRecord()">View</button>
+                            <button onclick="downloadRecord()">Download</button>
+                            <button onclick="sharePermissions()">Share</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>REC12347</td>
+                        <td>MRI Scan</td>
+                        <td>MRI</td> <!-- Record Type -->
+                        <td>Radiology</td>
+                        <td>Doctor</td>
+                        <td>Magnetic resonance imaging of the brain.</td>
+                        <td>2024-11-15</td>
+                        <td>Doctor B</td>
+                        <td>
+                            <button onclick="viewRecord()">View</button>
+                            <button onclick="downloadRecord()">Download</button>
+                            <button onclick="sharePermissions()">Share</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>REC12348</td>
+                        <td>CT Scan</td>
+                        <td>CT</td> <!-- Record Type -->
+                        <td>Radiology</td>
+                        <td>Doctor</td>
+                        <td>CT scan for abdominal examination.</td>
+                        <td>2024-11-16</td>
+                        <td>Doctor C</td>
+                        <td>
+                            <button onclick="viewRecord()">View</button>
+                            <button onclick="downloadRecord()">Download</button>
+                            <button onclick="sharePermissions()">Share</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>REC12349</td>
+                        <td>Urine Test</td>
+                        <td>Urine Test</td> <!-- Record Type -->
+                        <td>Hematology</td>
+                        <td>Patient</td>
+                        <td>Test to analyze urine composition.</td>
+                        <td>2024-11-17</td>
+                        <td>Doctor A</td>
+                        <td>
+                            <button onclick="viewRecord()">View</button>
+                            <button onclick="downloadRecord()">Download</button>
+                            <button onclick="sharePermissions()">Share</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Group By Button -->
+    <button class="group-button" onclick="groupByDepartment()">
+        <span>Group By</span>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Medical Records System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Placeholder functions for button actions
+        function viewRecord() {
+            alert('Viewing record...');
+        }
+        function downloadRecord() {
+            alert('Downloading record...');
+        }
+        function sharePermissions() {
+            alert('Managing share permissions...');
+        }
+
+        // Group records by department
+        function groupByDepartment() {
+            const table = document.getElementById('recordsTable');
+            const rows = Array.from(table.querySelectorAll('tbody tr'));
+            
+            // Sort rows based on the 'Department' column (index 3)
+            rows.sort((rowA, rowB) => {
+                const deptA = rowA.cells[3].textContent.trim();
+                const deptB = rowB.cells[3].textContent.trim();
+                return deptA.localeCompare(deptB);
+            });
+
+            // Re-append sorted rows to tbody
+            rows.forEach(row => table.querySelector('tbody').appendChild(row));
+        }
+    </script>
+</body>
+</html>

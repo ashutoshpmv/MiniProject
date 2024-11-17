@@ -1,0 +1,173 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f9f4; /* Light greenish background */
+    color: #333; /* Dark gray text */
+    line-height: 1.6;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+header {
+    background-color: #4caf50; /* Green header */
+    color: white;
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+.header-actions button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Logout Button Styling */
+.logout-btn {
+    background-color: #388e3c; /* Dark green for logout button */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #2c6e2f; /* Even darker green on hover */
+}
+
+/* Main Content */
+main {
+    margin-top: 30px;
+}
+
+.upload-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* File Upload Section - Green */
+#file-upload-section {
+    background-color: #4caf50; /* Green background */
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#file-upload-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#file-upload-section input[type="file"] {
+    margin: 20px 0;
+    padding: 10px;
+}
+
+#file-upload-section button {
+    background-color: #388e3c; /* Darker green for upload button */
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#file-upload-section button:hover {
+    background-color: #2c6e2f; /* Darker green on hover */
+}
+
+/* After File Upload - Hide until file is uploaded */
+#record-details-section {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #555; /* Lighter gray text for labels */
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 15px;
+    background-color: #388e3c; /* Dark green for submit button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2c6e2f; /* Even darker green on hover */
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Dark footer background */
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .upload-container {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}

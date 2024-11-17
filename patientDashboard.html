@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="pdashboard.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1 class="logo">Patient Dashboard</h1>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Tiles -->
+    <main>
+        <div class="dashboard-container">
+            <!-- Medical Records Section -->
+            <div class="tile" onclick="location.href='medicalRecords.html'">
+                <div class="tile-content">
+                    <h2>Medical Records</h2>
+                    <p>View and manage your medical records.</p>
+                </div>
+            </div>
+
+            <!-- Permission Management -->
+            <div class="tile" onclick="location.href='permManagement.html'">
+                <div class="tile-content">
+                    <h2>Permission Management</h2>
+                    <p>Grant or revoke access to doctors.</p>
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <div class="tile" onclick="location.href='profile.html'">
+                <div class="tile-content">
+                    <h2>Profile</h2>
+                    <p>Manage your personal details and settings.</p>
+                </div>
+            </div>
+
+            <!-- Logs -->
+            <div class="tile" onclick="location.href='logs.html'">
+                <div class="tile-content">
+                    <h2>Logs</h2>
+                    <p>Track activity and access logs.</p>
+                </div>
+            </div>
+
+            <!-- Support and Help -->
+            <div class="tile" onclick="location.href='support.html'">
+                <div class="tile-content">
+                    <h2>Support & Help</h2>
+                    <p>Get assistance and answers to your questions.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Medical Records System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function logout() {
+            alert('You have been logged out.');
+            location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

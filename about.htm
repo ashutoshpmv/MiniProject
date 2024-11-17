@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Meet the Team</h1>
+        <p>Scroll down to learn more about the talented individuals behind our success!</p>
+    </header>
+
+    <main>
+        <!-- Ashutosh Section -->
+        <section class="team-section fade-in-left" id="ashutosh">
+            <img src="profile.png" alt="Ashutosh Kumar Singh" class="team-img">
+            <div class="team-info">
+                <h2>Ashutosh Kumar Singh</h2>
+                <p>Ashutosh is a versatile developer skilled in frontend, backend, and database management. His ability to bridge visual design with complex system logic is a cornerstone of the team's success.</p>
+            </div>
+        </section>
+
+        <!-- Anurag Section -->
+        <section class="team-section fade-in-right" id="anurag">
+            <div class="team-info">
+                <h2>Anurag Singh</h2>
+                <p>Anurag excels in creating powerful backend systems while integrating seamlessly with user-friendly frontend designs. His database expertise ensures system scalability and reliability.</p>
+            </div>
+            <img src="anurag.jpg" alt="Anurag Singh" class="team-img">
+        </section>
+
+        <!-- Anushka Section -->
+        <section class="team-section fade-in-left" id="anushka">
+            <img src="anushka.jpg" alt="Anushka Mittal" class="team-img">
+            <div class="team-info">
+                <h2>Anushka Mittal</h2>
+                <p>Anushka is a talented full-stack developer with a knack for creating elegant, user-friendly designs and efficient backend systems. She ensures smooth interaction between all components.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Our Team. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll Animation Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".team-section");
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop < windowHeight - 50) {
+                        section.classList.add("show");
+                    }
+                });
+            };
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll(); // Initial check
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permission Management</title>
+  <link rel="stylesheet" href="permission.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="#">Health Records</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main container -->
+  <div class="container">
+    
+    <!-- Section: List of Doctors with Access -->
+    <section class="permission-section">
+      <h2>Doctors with Access</h2>
+      <table class="access-table">
+        <thead>
+          <tr>
+            <th>Doctor's Name</th>
+            <th>Specialization</th>
+            <th>Hospital/Clinic</th>
+            <th>Access Granted Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example Doctor 1 -->
+          <tr>
+            <td>Dr. John Doe</td>
+            <td>Cardiology</td>
+            <td>ABC Hospital</td>
+            <td>2024-08-01</td>
+            <td>
+              <button class="btn revoke-btn">Revoke Access</button>
+            </td>
+          </tr>
+          <!-- Example Doctor 2 -->
+          <tr>
+            <td>Dr. Emily Smith</td>
+            <td>Pediatrics</td>
+            <td>XYZ Clinic</td>
+            <td>2024-08-10</td>
+            <td>
+              <button class="btn revoke-btn">Revoke Access</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section: Grant Access to a Doctor -->
+    <section class="grant-access-section">
+      <h2>Grant Access to a Doctor</h2>
+      <form id="grant-access-form">
+        <div class="form-group">
+          <label for="doctor-select">Select Doctor</label>
+          <select id="doctor-select" class="form-control">
+            <option value="doctor1">Dr. John Doe</option>
+            <option value="doctor2">Dr. Emily Smith</option>
+            <option value="doctor3">Dr. Mark Johnson</option>
+            <!-- More doctors could be listed here -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="access-type">Grant Access For</label>
+          <div class="access-options">
+            <input type="checkbox" id="all-records" class="access-checkbox">
+            <label for="all-records">All Records</label>
+            <input type="checkbox" id="specific-records" class="access-checkbox">
+            <label for="specific-records">Specific Records</label>
+          </div>
+        </div>
+
+        <div class="form-group" id="specific-records-section" style="display: none;">
+          <label for="specific-records-list">Select Specific Records</label>
+          <select id="specific-records-list" class="form-control" multiple>
+            <option value="record1">Blood Test Report</option>
+            <option value="record2">X-Ray Report</option>
+            <option value="record3">MRI Scan</option>
+            <!-- More records could be listed here -->
+          </select>
+        </div>
+
+        <button type="submit" class="btn grant-access-btn">Grant Access</button>
+      </form>
+    </section>
+
+    <!-- Section: Revoke Access -->
+    <section class="revoke-access-section">
+      <h2>Revoke Access</h2>
+      <form id="revoke-access-form">
+        <div class="form-group">
+          <label for="doctor-revoke-select">Select Doctor</label>
+          <select id="doctor-revoke-select" class="form-control">
+            <option value="doctor1">Dr. John Doe</option>
+            <option value="doctor2">Dr. Emily Smith</option>
+            <!-- More doctors could be listed here -->
+          </select>
+        </div>
+        <button type="submit" class="btn revoke-btn">Revoke Access</button>
+      </form>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2024 Health Records. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

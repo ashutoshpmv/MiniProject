@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <!-- Role Selection -->
+      <fieldset>
+        <legend>Select Your Role</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <input type="radio" id="roleDoctor" name="role" value="Doctor" required>
+            <label for="roleDoctor">Doctor</label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="rolePatient" name="role" value="Patient" required>
+            <label for="rolePatient">Patient</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Login Credentials -->
+      <fieldset>
+        <legend>Login Credentials</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button type="submit" class="btn-submit">Login</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript to handle role-based redirection
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Get selected role
+      const role = document.querySelector('input[name="role"]:checked').value;
+
+      // Redirect based on role
+      if (role === 'Doctor') {
+        window.location.href = 'doctorDashboard.htm';
+      } else if (role === 'Patient') {
+        window.location.href = 'patientDashboard.html';
+      }
+    });
+  </script>
+</body>
+</html>

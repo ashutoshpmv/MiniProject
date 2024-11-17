@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration</title>
+  <link rel="stylesheet" href="patientregistration.css">
+</head>
+<body>
+  <div class="registration-container">
+    <h1>Patient Registration Form</h1>
+    <form action="/register" method="POST" enctype="multipart/form-data">
+      <!-- Personal Information -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bloodGroup">Blood Group:</label>
+            <input type="text" id="bloodGroup" name="bloodGroup" placeholder="Optional">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Contact Information -->
+      <fieldset>
+        <legend>Contact Information</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+          </div>
+          <div class="form-group">
+            <label for="alternatePhone">Alternate Phone:</label>
+            <input type="text" id="alternatePhone" name="alternatePhone" placeholder="Optional">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="address[street]" required>
+          </div>
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="address[city]" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="address[state]" required>
+          </div>
+          <div class="form-group">
+            <label for="postalCode">Postal Code:</label>
+            <input type="text" id="postalCode" name="address[postalCode]" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Emergency Contact -->
+      <fieldset>
+        <legend>Emergency Contact</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="emergencyName">Name:</label>
+            <input type="text" id="emergencyName" name="emergencyContact[name]" required>
+          </div>
+          <div class="form-group">
+            <label for="relation">Relation:</label>
+            <input type="text" id="relation" name="emergencyContact[relation]" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="emergencyPhone">Phone Number:</label>
+            <input type="text" id="emergencyPhone" name="emergencyContact[phoneNumber]" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Account Details -->
+      <fieldset>
+        <legend>Account Details</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button type="submit" class="btn-submit">Register</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
